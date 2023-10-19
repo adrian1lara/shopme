@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 
-const CartList = ({ cart }) => {
+const CartList = ({ cart, addToCart , removeFromCart}) => {
 
     return (
         <>
@@ -11,6 +11,8 @@ const CartList = ({ cart }) => {
                         <p>{product.title}</p>
                         <p>{product.price}</p>
                         <p>{product.quantity}</p>
+                        <button onClick={() => addToCart(product)}>Add</button>
+                        <button onClick={() => removeFromCart(product)}>Remove </button>
                     </div>
                 ))}
             </div>
@@ -19,7 +21,9 @@ const CartList = ({ cart }) => {
 }
 
 CartList.propTypes = {
-    cart: PropTypes.array
+    cart: PropTypes.array,
+    addToCart: PropTypes.func,
+    removeFromCart: PropTypes.func
   };
 
 export default CartList
