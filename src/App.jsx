@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Router from "./Router"
 import { Theme } from "@radix-ui/themes";
+import "./styles/style.css"
 
 function App() {
 
