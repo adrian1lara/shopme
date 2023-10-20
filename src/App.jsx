@@ -1,6 +1,6 @@
-import Nav from "./components/Nav"
 import { useState } from "react"
 import Router from "./Router"
+import { Theme } from "@radix-ui/themes";
 
 function App() {
 
@@ -24,11 +24,22 @@ function App() {
     }
   };
 
+  const removeFromCart = (product) => {
+    const updatedCart = cart.filter((item) => item.id !== product.id);
+    setCart(updatedCart);
+  };
+
   return (
     <>
-      <Nav />
-      <Router cart={cart} addToCart={addToCart} />
+      <Theme appearance="dark">
+
+          <Router 
+          cart={cart} 
+          addToCart={addToCart} 
+          removeFromCart={removeFromCart} />
+      </Theme>
     </>
+    
   )
 }
 
