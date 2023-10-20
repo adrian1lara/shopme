@@ -3,7 +3,7 @@ import ProductList from "../components/ProductList"
 import propTypes from "prop-types"
 import CartList from "../components/CartList"
 import Nav from "../components/Nav"
-import { Theme } from "@radix-ui/themes"
+import { Theme, Text } from "@radix-ui/themes"
 
 const Products = ({ addToCart, cart, removeFromCart }) => {
 
@@ -18,7 +18,7 @@ const Products = ({ addToCart, cart, removeFromCart }) => {
         <>
         <Theme appearance="dark">
             <Nav />
-            <h1>Products</h1>
+            <Text as="h1" color="orange" style={{marginTop: '1rem', textAlign: 'center'}}>Products</Text>
             <ProductList data={data} addToCart={addToCart} />
             <CartList cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart}/>
         </Theme>
