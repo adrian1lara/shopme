@@ -1,3 +1,4 @@
+import { Button, Text } from "@radix-ui/themes";
 import PropTypes from "prop-types";
 
 
@@ -8,11 +9,11 @@ const CartList = ({ cart, addToCart , removeFromCart}) => {
             <div>
                 {cart.map((product) => (
                     <div key={product.id}>
-                        <p>{product.title}</p>
+                        <Text>{product.title}</Text>
                         <p>{product.price}</p>
                         <p>{product.quantity}</p>
-                        <button onClick={() => addToCart(product)}>Add</button>
-                        <button onClick={() => removeFromCart(product)}>Remove </button>
+                        <Button onClick={() => addToCart(product)}>Add</Button>
+                        <Button onClick={() => removeFromCart(product)}>Remove </Button>
                     </div>
                 ))}
             </div>
