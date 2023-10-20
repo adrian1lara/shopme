@@ -1,4 +1,4 @@
-import { Button, Text } from "@radix-ui/themes";
+import { Box, Button, Card, Text } from "@radix-ui/themes";
 import PropTypes from "prop-types";
 
 
@@ -6,17 +6,18 @@ const CartList = ({ cart, addToCart , removeFromCart}) => {
 
     return (
         <>
-            <div>
+            <Box >
                 {cart.map((product) => (
-                    <div key={product.id}>
-                        <Text>{product.title}</Text>
-                        <p>{product.price}</p>
-                        <p>{product.quantity}</p>
+                    <Card style={{ maxWidth: 240,}} 
+                    key={product.id}>
+                        <Text as="p">{product.title}</Text>
+                        <Text as="p">Price: ${product.price}</Text>
+                        <Text as="p">Quantity: {product.quantity}</Text>
                         <Button onClick={() => addToCart(product)}>Add</Button>
                         <Button onClick={() => removeFromCart(product)}>Remove </Button>
-                    </div>
+                    </Card>
                 ))}
-            </div>
+            </Box>
         </>
     )
 }
