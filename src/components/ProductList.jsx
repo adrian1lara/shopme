@@ -1,3 +1,4 @@
+import { Button } from '@radix-ui/themes';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
@@ -21,18 +22,17 @@ const ProductList = ( { data, addToCart }) => {
     return (
         <>
             <label htmlFor="category">Category</label>
-            <select
-                name="category"
-                id="category"
-                value={selectedCategory}
-                onChange={handleCategoryChange}
-            >
-                <option value="">All</option>
-                {uniqueCategories.map((category) => (
-                    <option key={category} value={category}>
-                        {category}
-                    </option>
-                ))}
+                    <select
+                        name="category"
+                        id="category"
+                        value={selectedCategory}
+                        onChange={handleCategoryChange}>
+                        <option value="">All</option>
+                        {uniqueCategories.map((category) => (
+                            <option key={category} value={category}>
+                                {category}
+                            </option>
+                        ))}
             </select>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', }}>
@@ -48,7 +48,7 @@ const ProductList = ( { data, addToCart }) => {
                         src={product.image} alt={product.title} />
                         <p>{product.price}</p>
                         <p>{product.category}</p>
-                        <button onClick={() => handleAddToCart(product)}>Add to cart</button>
+                        <Button onClick={() => handleAddToCart(product)}>Add to cart</Button>
                     </div>
                 ))}
             </div>
