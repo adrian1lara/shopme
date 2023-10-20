@@ -1,12 +1,13 @@
+import { Heading, Link } from "@radix-ui/themes"
 
 const Nav = () => {
     return (
         <>
-            <h1>Shopme</h1>
+            <Heading as="h1">Shopme</Heading>
             <nav>
                 <li>
-                    <a href="/">Home</a>
-                    <a href="/products">Products</a>
+                    <Link href="/">Home</Link>
+                    <Link href="/products">Products</Link>
                 </li>
             </nav>
         </>
