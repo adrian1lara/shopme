@@ -13,7 +13,7 @@ function App() {
     if (existingProduct) {
       const updatedCart = cart.map((item) => {
         if (item.id === product.id) {
-          return { ...item, quantity: item.quantity + 1, price: item.price + product.price };
+          return { ...item, quantity: item.quantity + 1};
         } else {
           return item;
         }
