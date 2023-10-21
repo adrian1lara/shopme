@@ -3,24 +3,35 @@ import ProductList from "../components/ProductList"
 import propTypes from "prop-types"
 import CartList from "../components/CartList"
 import Nav from "../components/Nav"
-import { Theme, Text } from "@radix-ui/themes"
+import { Theme, Text, Box, Flex } from "@radix-ui/themes"
+import Drawer from "../components/Drawer"
+import LoadingPage from "./LoadingPage"
 
 const Products = ({ addToCart, cart, removeFromCart }) => {
 
     const { data } = useData(`https://fakestoreapi.com/products`)
-    
 
     if (!data) {
-        return <h1>Loading...</h1>
+        return <LoadingPage />
     }
 
     return (
         <>
         <Theme appearance="dark">
-            <Nav />
-            <Text as="h1" color="orange" style={{marginTop: '1rem', textAlign: 'center'}}>Products</Text>
-            <ProductList data={data} addToCart={addToCart} />
-            <CartList cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart}/>
+            <Flex>
+                <Box style={{ flex: 1, padding: '1rem',}}>
+                    <Nav />
+                    <Text as="h1" color="orange" style={{marginTop: '1rem', textAlign: 'center'}}>Products</Text>
+                    <ProductList data={data} addToCart={addToCart} />
+                </Box>
+                <Box style={{
+                    alignContent: 'center',
+                    marginTop: 15}}>
+                    <Drawer>
+                        <CartList cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+                    </Drawer>
+                </Box>
+            </Flex>
         </Theme>
         </>
     )
