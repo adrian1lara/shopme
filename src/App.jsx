@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Router from "./Router"
+import Routing from "./Router"
 import { Theme } from "@radix-ui/themes";
 import "./styles/style.css"
 
@@ -34,7 +34,7 @@ function App() {
     <>
       <Theme appearance="dark">
 
-          <Router 
+          <Routing 
           cart={cart} 
           addToCart={addToCart} 
           removeFromCart={removeFromCart} />
