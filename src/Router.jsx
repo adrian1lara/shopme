@@ -6,27 +6,28 @@ import PropTypes from "prop-types";
 
 
 
-const Router = ( {cart, addToCart, removeFromCart}) => {
+const Routing = ( {cart, addToCart, removeFromCart}) => {
 
     const router = createBrowserRouter([
         {
-            path: "/",
+            path: "/shopme/",
             element: <Home />,
             errorElement: <ErrorPage />,
         },
         {
-            path: "/products",
+            path: "shopme/products",
             element: <Products addToCart={addToCart} cart={cart}  removeFromCart={removeFromCart} />,
         }
     ])
 
     return <RouterProvider router={router} />
+
 }
 
-Router.propTypes = {
+Routing.propTypes = {
     cart: PropTypes.array,
     addToCart: PropTypes.func,
     removeFromCart: PropTypes.func
 }
 
-export default Router
+export default Routing
