@@ -27,7 +27,7 @@ const Home = () => {
                             color="cyan"
                             variant="soft"
                             asChild >
-                            <Link href="/products" underline="none"
+                            <Link href="/shopme/products" underline="none"
                             style={{borderRadius: '5px'}}>Come here</Link>
                         </Button>
                     </Box>
