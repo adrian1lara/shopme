@@ -29,7 +29,7 @@ const Drawer = ({ children }) => {
                 transition: 'all 0.3s ease-in-out',
                 backgroundColor: 'var(--gray-5)',
                 padding: '1rem',
-                overflowY: 'hidden',
+                overflowY: 'auto',
                 }}>
                     <Box style={
                         {
