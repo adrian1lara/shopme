@@ -8,8 +8,8 @@ const Nav = () => {
 
                 <nav>
                     <Box m="2" >
-                        <Link href="/shopme/" size="4" mr="2">Home</Link>
-                        <Link href="/shopme/products" size="4" mr="2">Products</Link>
+                        <Link href="/" size="4" mr="2">Home</Link>
+                        <Link href="/products" size="4" mr="2">Products</Link>
                     </Box>
                 </nav>
             </Flex>

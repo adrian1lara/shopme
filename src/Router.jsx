@@ -10,12 +10,12 @@ const Routing = ( {cart, addToCart, removeFromCart}) => {
 
     const router = createBrowserRouter([
         {
-            path: "/shopme/",
+            path: "/",
             element: <Home />,
             errorElement: <ErrorPage />,
         },
         {
-            path: "shopme/products",
+            path: "/products",
             element: <Products addToCart={addToCart} cart={cart}  removeFromCart={removeFromCart} />,
         }
     ])
