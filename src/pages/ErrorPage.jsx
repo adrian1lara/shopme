@@ -1,7 +1,10 @@
-import { Box, Heading } from "@radix-ui/themes";
-import { Link } from "react-router-dom";
+import { Box, Heading, Text } from "@radix-ui/themes";
+import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
+
+    const error = useRouteError();
+    console.log(error);
 
     return (
         <>
@@ -19,14 +22,17 @@ const ErrorPage = () => {
                     fontWeight: 'bold',
                     margin: '1rem',
                 }} >
-                    Error 404
+                    Oops!
                 </Heading>
                 <Heading as="h2" style={{
                     color: 'var(--gray-10)',
                     fontSize: '2rem',
                     fontWeight: 'bold',
                     margin: '1rem',
-                }}>Page not found</Heading>
+                }}>unexpect error has occurred.</Heading>
+                <Text as="p">
+                    <i>{error.statusText || error.message}</i>
+                </Text>
                 <Link to="/">go back to home</Link>
             </Box>
             
