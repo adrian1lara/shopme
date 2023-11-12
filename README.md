@@ -1,5 +1,6 @@
 # Shopme
 Shopme is a website where i implement an API, react-router and catalog.
+![live preview](https://1shopme.netlify.app/)
 
 ## Screenshots
 ![Shopme home](/src/assets/shopmehome.png)
